@@ -111,16 +111,17 @@ export function WordInputForm({ onSearch, onClear }: WordInputFormProps) {
       
       <p/>
 
-      <div className="flex justify-center gap-12 h-32 m-12">
-        <Button variant="outline" size="lg" className="text-4xl px-16 py-8 min-w-[220px] min-h-[80px]" onClick={handleClear}>
+      <div className="flex justify-center items-center gap-24 h-32 m-12">
+        <Button variant="outline" size="lg" className="text-5xl px-16 py-8 min-w-[220px] min-h-[80px]" onClick={handleClear}>
           Clear Filters
         </Button>
+        <span className="w-0.5 h-20 bg-gray-300 mx-4 rounded-full" />
         <Button
           size="lg"
-          className="bg-green-600 hover:bg-green-700 text-white text-4xl px-20 py-8 min-w-[240px] min-h-[80px] flex items-center gap-4"
+          className="bg-green-600 hover:bg-green-700 text-white text-5xl px-20 py-8 min-w-[240px] min-h-[80px] flex items-center gap-4"
           onClick={handleSearch}
         >
-          <FaSearch className="text-5xl text-white" style={{ filter: 'drop-shadow(0 0 2px #22c55e)' }} />
+          <FaSearch className="text-6xl text-white" style={{ filter: 'drop-shadow(0 0 2px #22c55e)' }} />
           Search
         </Button>
       </div>

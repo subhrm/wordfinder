@@ -5,7 +5,7 @@
 **Project Name:** WordFinder
 **Type:** Web Application
 **Frontend Framework:** React
-**UI Components:** shadcn/ui
+**UI Components:** Tailwind CSS
 **State Management:** React's built-in state management (useState, useEffect) or Context API for larger state management needs.
 **Build Tool:** Vite
 **Deployment:** Static hosting 
