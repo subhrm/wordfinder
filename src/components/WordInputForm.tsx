@@ -1,7 +1,8 @@
 import { Button } from "@/components/ui/button";
+import { FaSearch } from "react-icons/fa";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { Separator } from "@/components/ui/separator";
+// import { Separator } from "@/components/ui/separator";
 import { useState } from "react";
 
 interface WordInputFormProps {
@@ -57,6 +58,7 @@ export function WordInputForm({ onSearch, onClear }: WordInputFormProps) {
                 id={`pos-${i}`}
                 maxLength={1}
                 value={positionalChars[i]}
+                className="size-16 text-center text-xl"
                 onChange={(e) => handlePositionalCharChange(i, e.target.value)}
               />
             </div>
@@ -64,7 +66,7 @@ export function WordInputForm({ onSearch, onClear }: WordInputFormProps) {
         </div>
       </div>
 
-      <Separator />
+      {/* <Separator /> */}
 
       <div>
         <h3 className="text-lg font-medium">Positional Exclusions</h3>
@@ -76,6 +78,7 @@ export function WordInputForm({ onSearch, onClear }: WordInputFormProps) {
               <Input
                 id={`exclude-pos-${i}`}
                 value={positionalExcludes[i]}
+                className="size-16 text-center text-xl"
                 onChange={(e) => handlePositionalExcludeChange(i, e.target.value)}
               />
             </div>
@@ -83,7 +86,7 @@ export function WordInputForm({ onSearch, onClear }: WordInputFormProps) {
         </div>
       </div>
 
-      <Separator />
+      {/* <Separator /> */}
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         <div>
@@ -91,6 +94,7 @@ export function WordInputForm({ onSearch, onClear }: WordInputFormProps) {
           <p className="text-sm text-muted-foreground">Characters that must appear somewhere in the word.</p>
           <Input
             value={globalIncludes}
+            maxLength={5}
             onChange={(e) => setGlobalIncludes(e.target.value.toLowerCase())}
           />
         </div>
@@ -99,14 +103,26 @@ export function WordInputForm({ onSearch, onClear }: WordInputFormProps) {
           <p className="text-sm text-muted-foreground">Characters that must not appear anywhere in the word.</p>
           <Input
             value={globalExcludes}
+            maxLength={21}
             onChange={(e) => setGlobalExcludes(e.target.value.toLowerCase())}
           />
         </div>
       </div>
+      
+      <p/>
 
-      <div className="flex justify-end space-x-4">
-        <Button variant="outline" onClick={handleClear}>Clear Filters</Button>
-        <Button onClick={handleSearch}>Search</Button>
+      <div className="flex justify-center gap-12 h-32 m-12">
+        <Button variant="outline" size="lg" className="text-4xl px-16 py-8 min-w-[220px] min-h-[80px]" onClick={handleClear}>
+          Clear Filters
+        </Button>
+        <Button
+          size="lg"
+          className="bg-green-600 hover:bg-green-700 text-white text-4xl px-20 py-8 min-w-[240px] min-h-[80px] flex items-center gap-4"
+          onClick={handleSearch}
+        >
+          <FaSearch className="text-5xl text-white" style={{ filter: 'drop-shadow(0 0 2px #22c55e)' }} />
+          Search
+        </Button>
       </div>
     </div>
   );
