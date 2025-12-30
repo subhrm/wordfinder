@@ -12,7 +12,7 @@
 - **Global Constraints**:
   - **Must Contain**: Filter for words that must contain a specific set of letters anywhere.
   - **Must Not Contain**: Filter out words that contain forbidden letters.
-- **Premium UI/UX**:
+- **UI/UX**:
   - Deep dark theme with vibrant violet/indigo accents.
   - Responsive, grid-based results display.
   - Real-time feedback and clear visual hierarchy.
