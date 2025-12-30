@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { LoadingIndicator } from "@/components/LoadingIndicator";
 import { ResultsDisplay } from "@/components/ResultsDisplay";
 import { WordInputForm } from "@/components/WordInputForm";
+import { Gamepad2 } from "lucide-react";
 
 const WORD_LIST_URL = "https://gist.githubusercontent.com/subhrm/5362767af06597bd1e216c59b760f6cb/raw/6bfa15d263d6d5b63840a8e5b64e04b382fdb079/valid-wordle-words.txt";
 
@@ -54,7 +55,7 @@ function App() {
     if (filters.globalIncludes) {
       const includeArr = filters.globalIncludes.split("");
       newFilteredWords = newFilteredWords.filter((word) =>
-        includeArr.every((char) => word.includes(char))
+        includeArr.every((char: string) => word.includes(char))
       );
     }
 
@@ -62,7 +63,7 @@ function App() {
     if (filters.globalExcludes) {
       const excludeArr = filters.globalExcludes.split("");
       newFilteredWords = newFilteredWords.filter(
-        (word) => !excludeArr.some((char) => word.includes(char))
+        (word) => !excludeArr.some((char: string) => word.includes(char))
       );
     }
 
@@ -74,18 +75,44 @@ function App() {
   };
 
   return (
-    <div className="container mx-auto bg-zinc-950 p-8">
-      <h1 className="text-4xl font-bold mb-8">WordFinder</h1>
-      {isLoading ? (
-        <LoadingIndicator />
-      ) : error ? (
-        <p className="text-red-500">{error}</p>
-      ) : (
-        <div className="space-y-8">
-          <WordInputForm onSearch={handleSearch} onClear={handleClear} />
-          <ResultsDisplay words={filteredWords} />
-        </div>
-      )}
+    <div className="min-h-screen bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-primary/20 via-background to-background p-4 md:p-8">
+      <div className="container mx-auto max-w-5xl space-y-8">
+        <header className="flex flex-col items-center justify-center space-y-4 pt-8 pb-4">
+          <div className="flex items-center gap-3 p-3 bg-primary/10 rounded-full ring-1 ring-primary/20">
+            <Gamepad2 className="w-8 h-8 text-primary" />
+          </div>
+          <div className="text-center space-y-2">
+            <h1 className="text-4xl md:text-5xl font-black tracking-tight bg-clip-text text-transparent bg-gradient-to-br from-primary to-primary-foreground">
+              WordFinder
+            </h1>
+            <p className="text-muted-foreground text-lg max-w-[600px]">
+              Master Wordle and anagrams with this powerful constraint solver to find the perfect word.
+            </p>
+          </div>
+        </header>
+
+        <main className="space-y-8">
+          {isLoading ? (
+            <div className="flex flex-col justify-center items-center h-64 space-y-4">
+              <LoadingIndicator />
+              <p className="text-muted-foreground animate-pulse">Loading dictionary...</p>
+            </div>
+          ) : error ? (
+            <div className="p-4 border border-destructive/50 rounded-lg bg-destructive/10 text-destructive text-center">
+              {error}
+            </div>
+          ) : (
+            <>
+              <WordInputForm onSearch={handleSearch} onClear={handleClear} />
+              <ResultsDisplay words={filteredWords} />
+            </>
+          )}
+        </main>
+
+        <footer className="text-center text-sm text-muted-foreground py-8">
+          <p>© {new Date().getFullYear()} WordFinder. Built with standard web technologies.</p>
+        </footer>
+      </div>
     </div>
   );
 }
