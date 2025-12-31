@@ -92,7 +92,7 @@ function App() {
                 WordFinder
               </h1>
               <p className="text-muted-foreground text-lg max-w-[600px]">
-                Master Wordle and anagrams with this powerful constraint solver to find the perfect word.
+                Find the perfect word with this powerful constraint solver.
               </p>
             </div>
           </header>
