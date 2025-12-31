@@ -116,7 +116,8 @@ function App() {
           </main>
 
           <footer className="text-center text-sm text-muted-foreground py-8">
-            <p>© {new Date().getFullYear()} WordFinder. Built with standard web technologies.</p>
+            <p>© {new Date().getFullYear()}  WordFinder. Built with React, Vite and TailwindCSS</p>
+            <p>Created by <a href="https://github.com/subhrm" target="_blank" rel="noopener noreferrer">@subhrm</a></p>
           </footer>
         </div>
       </div>
