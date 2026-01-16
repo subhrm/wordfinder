@@ -1,6 +1,6 @@
 # WordFinder
 
-**WordFinder** is a web application designed to help you with word games. Try it:  ![WordFinder App](https://wordfinder-af8.pages.dev/)
+**WordFinder** is a web application designed to help you with word games. Try it: [WordFinder App](https://wordfinder-af8.pages.dev/)
 
 ## ✨ Features
 
