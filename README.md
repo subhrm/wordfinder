@@ -1,9 +1,6 @@
 # WordFinder
 
-**WordFinder** is a web application designed to help you with word games. 
-
-![WordFinder UI](./public/screenshot.png)
-*(Note: Add a screenshot of the app to the public folder and name it screenshot.png)*
+**WordFinder** is a web application designed to help you with word games. Try it:  ![WordFinder App](https://wordfinder-af8.pages.dev/)
 
 ## ✨ Features
 
