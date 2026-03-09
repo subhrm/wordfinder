@@ -113,7 +113,7 @@ export function WordInputForm({ onSearch, onClear }: WordInputFormProps) {
                     <Input
                       id={`exclude-pos-${i}`}
                       value={positionalExcludes[i]}
-                      className="h-12 w-full text-center font-medium bg-background/50 border-input transition-all focus:border-yellow-500/50 focus:ring-yellow-500/20"
+                      className="h-12 w-full text-center font-medium uppercase bg-background/50 border-input transition-all focus:border-yellow-500/50 focus:ring-yellow-500/20"
                       onChange={(e) => handlePositionalExcludeChange(i, e.target.value)}
                       onKeyDown={(e) => handleKeyDown(i, e, 'exclude')}
                       placeholder="Not..."
@@ -136,8 +136,8 @@ export function WordInputForm({ onSearch, onClear }: WordInputFormProps) {
           <CardContent>
             <Input
               value={globalIncludes}
-              placeholder="e.g. 'ae' (must have these letters)"
-              className="h-12 text-lg tracking-wide bg-background/50"
+              placeholder="e.g. 'AE' (must have these letters)"
+              className="h-12 text-lg tracking-wide uppercase bg-background/50"
               onChange={(e) => setGlobalIncludes(e.target.value.toLowerCase())}
             />
           </CardContent>
@@ -154,8 +154,8 @@ export function WordInputForm({ onSearch, onClear }: WordInputFormProps) {
           <CardContent>
             <Input
               value={globalExcludes}
-              placeholder="e.g. 'xyz' (ignore these)"
-              className="h-12 text-lg tracking-wide bg-background/50"
+              placeholder="e.g. 'XYZ' (ignore these)"
+              className="h-12 text-lg tracking-wide uppercase bg-background/50"
               onChange={(e) => setGlobalExcludes(e.target.value.toLowerCase())}
             />
           </CardContent>

@@ -49,7 +49,9 @@ function App() {
     filters.positionalExcludes.forEach((excludeChars: string, index: number) => {
       if (excludeChars) {
         const excludeArr = excludeChars.split("");
-        newFilteredWords = newFilteredWords.filter((word) => !excludeArr.includes(word[index]));
+        newFilteredWords = newFilteredWords.filter((word) => {
+          return !excludeArr.includes(word[index]) && excludeArr.every((char: string) => word.includes(char));
+        });
       }
     });
 
